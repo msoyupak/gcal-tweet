@@ -37,7 +37,7 @@ class GCalWrapper
         },
       :authorization => user_credentials)
 
-    result.data.items.map{ |e| [e.summary, e.start.dateTime.to_s]}
+    result.data.items.map{ |e| [e.summary, e.start.dateTime]}
   end
 
   private
