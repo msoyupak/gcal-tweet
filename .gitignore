@@ -34,4 +34,8 @@ build/
 .rvmrc
 
 test.rb
+gcal_test.rb
 twitter_keys
+gcal_tweet_client.p12
+gcal-oauth2.json
+*.log
