@@ -15,7 +15,7 @@ class GCalWrapper
     file_storage = Google::APIClient::FileStorage.new(CREDENTIAL_STORE_FILE)
 
     if file_storage.authorization.nil?
-      @client_secrets = Google::APIClient::ClientSecrets.load
+      client_secrets = Google::APIClient::ClientSecrets.load
       @client.authorization = client_secrets.to_authorization
       @client.authorization.scope = 'https://www.googleapis.com/auth/calendar'
     else
@@ -37,7 +37,7 @@ class GCalWrapper
         },
       :authorization => user_credentials)
 
-    result.data.items.map{ |e| [e.summary, e.start.dateTime]}
+    result.data.items.map{ |e| [e.summary, e.start.dateTime, e.id]}
   end
 
   private
