@@ -37,7 +37,9 @@ class GCalWrapper
         },
       :authorization => user_credentials)
 
-    result.data.items.map{ |e| [e.summary, e.start.dateTime, e.id]}
+    result.data.items.select{|e| e.start.date.nil?}.map{ |e|
+      [e.summary, e.start.dateTime, e.id]
+    }
   end
 
   private

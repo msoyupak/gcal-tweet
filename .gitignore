@@ -33,9 +33,7 @@ build/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-test.rb
-gcal_test.rb
+*test.rb
 twitter_keys
-gcal_tweet_client.p12
 gcal-oauth2.json
 *.log
