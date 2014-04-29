@@ -17,7 +17,7 @@ class TweetReminderDaemon
     gcal_client.events_in_one_day.select{|e| !@events.include?(e[2]) }.each { |event|
 
       summary = event[0]
-      date = event[1]
+      date = event[1] + Time.zone_offset("PDT")
       event_id = event[2]
 
       puts "event found: #{summary} #{date} #{id}"
